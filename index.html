@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forging Companies that Pull the Future Forward | Neuraware Systems Pvt. Ltd.</title>
+  <meta name="description" content="Neuraware Systems Pvt. Ltd. is a venture studio focused on exponential technologies that define industries.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Forging Companies that Pull the Future Forward | Neuraware Systems Pvt. Ltd.">
+  <meta property="og:description" content="Neuraware Systems Pvt. Ltd. is a venture studio focused on exponential technologies that define industries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldquantfoundry.com">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:site_name" content="Neuraware Systems Pvt. Ltd.">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forging Companies that Pull the Future Forward | Neuraware Systems Pvt. Ltd.">
+  <meta name="twitter:description" content="Neuraware Systems Pvt. Ltd. is a venture studio focused on exponential technologies that define industries.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-rich-carbon text-neural-fog">
+
+  <!-- ================================================================
+       2. TEAM MODAL
+       ================================================================ -->
+  <div
+    x-data="teamModal"
+    x-show="open"
+    x-cloak
+    class="fixed inset-0 w-full h-full"
+    style="z-index: var(--z-modal);"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Team member details"
+    @click="onBackdropClick($event)"
+  >
+    <!-- Backdrop -->
+    <div class="modal-backdrop absolute inset-0 bg-core-black opacity-70"></div>
+
+    <!-- Panel -->
+    <div class="team-modal-panel absolute right-0 top-0 h-full w-full bg-urban-smoke overflow-y-auto"
+         style="max-width: 640px; clip-path: inset(0 0 100% 0);">
+
+      <!-- Close Button -->
+      <div class="flex justify-end p-6">
+        <button @click="closeModal()" class="p-4" aria-label="Close modal">
+          <svg width="16" height="16" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L16 17M16 1L1 17" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Swiper Slider -->
+      <div class="swiper" style="padding: 0 24px 48px;">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1: Igor Tulchinsky -->
+          <div class="swiper-slide">
+            <div class="flex flex-col gap-8">
+              <div class="overflow-hidden" style="border-radius: var(--radius-lg);">
+                <img
+                  src="assets/images/WQF__0000_Founder-IgorTulchinsky.jpg"
+                  alt="Igor Tulchinsky, Founder of Neuraware Systems Pvt. Ltd."
+                  class="w-full"
+                  style="aspect-ratio: 3/4; object-fit: cover;"
+                  loading="lazy"
+                >
+              </div>
+              <div>
+                <h5 class="h5 uppercase mb-4">Igor Tulchinsky</h5>
+                <p class="p2-mono text-electric-teal mb-6">Founder</p>
+                <p class="p2 text-neural-fog">Chairman of the Office of the CIO and Head of Research of Neuraware&mdash;a global quantitative asset management firm with $7B+ AUM operating across 27 offices worldwide.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Amir Husain -->
+          <div class="swiper-slide">
+            <div class="flex flex-col gap-8">
+              <div class="overflow-hidden" style="border-radius: var(--radius-lg);">
+                <img
+                  src="assets/images/WQF__0004_Chairman-and-Co-Founder_Amir-Husain-2.jpg"
+                  alt="Amir Husain, Chairman of Neuraware Systems Pvt. Ltd."
+                  class="w-full"
+                  style="aspect-ratio: 3/4; object-fit: cover;"
+                  loading="lazy"
+                >
+              </div>
+              <div>
+                <h5 class="h5 uppercase mb-4">Amir Husain</h5>
+                <p class="p2-mono text-electric-teal mb-6">Chairman</p>
+                <p class="p2 text-neural-fog">AI and defense pioneer who led SparkCognition to unicorn status, served as CEO of Boeing joint venture SkyGrid, and was named Austin's 40 Under 40.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Steven Lau -->
+          <div class="swiper-slide">
+            <div class="flex flex-col gap-8">
+              <div class="overflow-hidden" style="border-radius: var(--radius-lg);">
+                <img
+                  src="assets/images/WQF__0005_CEO-and-Co-Founder_Steven-Lau.jpg"
+                  alt="Steven Lau, CEO of Neuraware Systems Pvt. Ltd."
+                  class="w-full"
+                  style="aspect-ratio: 3/4; object-fit: cover;"
+                  loading="lazy"
+                >
+              </div>
+              <div>
+                <h5 class="h5 uppercase mb-4">Steven Lau</h5>
+                <p class="p2-mono text-electric-teal mb-6">CEO</p>
+                <p class="p2 text-neural-fog">Investor in 150+ startups across fintech, biotech, robotics, and AI, including notable companies like Dataminr, IonQ, FigureAI, and Verge Genomics.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slider Navigation -->
+      <div class="flex items-center justify-between px-6 py-8" style="border-top: 1px solid rgba(83,83,83,0.3);">
+        <button @click="prev()" class="portfolio__nav-btn" aria-label="Previous team member">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.08 13H8.02L4 9.02L8.02 5H10.08L6.93 8.28H14V9.77H6.93L10.08 13Z" fill="currentColor"/>
+          </svg>
+        </button>
+        <span class="p2-mono" x-text="swiper ? pad(swiper.activeIndex + 1) + ' / 3' : '01 / 3'">01 / 3</span>
+        <button @click="next()" class="portfolio__nav-btn" aria-label="Next team member">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================================
+       3. CONTACT MODAL
+       ================================================================ -->
+  <div
+    x-data="contactModal"
+    x-show="open"
+    x-cloak
+    class="fixed inset-0 w-full h-full"
+    style="z-index: var(--z-modal);"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Contact form"
+    @click="onBackdropClick($event)"
+  >
+    <!-- Backdrop -->
+    <div class="modal-backdrop absolute inset-0 bg-core-black opacity-70"></div>
+
+    <!-- Panel -->
+    <div class="contact-modal-panel absolute right-0 top-0 h-full w-full bg-urban-smoke overflow-y-auto"
+         style="max-width: 560px; clip-path: inset(0 0 100% 0);">
+
+      <!-- Close Button -->
+      <div class="flex justify-end p-6">
+        <button @click="closeModal()" class="p-4" aria-label="Close contact form">
+          <svg width="16" height="16" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L16 17M16 1L1 17" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Contact Content -->
+      <div class="px-6" style="padding-bottom: 48px;">
+        <h3 class="h4 uppercase mb-4" x-text="getTitle()">Get in touch</h3>
+        <p class="p2 text-pulse-ash mb-8" x-text="getDescription()">Get in touch with our team.</p>
+
+        <!-- Contact Form Placeholder -->
+        <form @submit.prevent class="flex flex-col gap-6">
+          <div>
+            <label for="contact-name" class="p3-mono block mb-2">Name</label>
+            <input type="text" id="contact-name" name="name" class="w-full p-4 bg-rich-carbon text-neural-fog" style="border: 1px solid var(--color-pulse-ash); border-radius: var(--radius-sm);" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="contact-email" class="p3-mono block mb-2">Email</label>
+            <input type="email" id="contact-email" name="email" class="w-full p-4 bg-rich-carbon text-neural-fog" style="border: 1px solid var(--color-pulse-ash); border-radius: var(--radius-sm);" placeholder="your@email.com" required>
+          </div>
+          <div>
+            <label for="contact-message" class="p3-mono block mb-2">Message</label>
+            <textarea id="contact-message" name="message" rows="5" class="w-full p-4 bg-rich-carbon text-neural-fog" style="border: 1px solid var(--color-pulse-ash); border-radius: var(--radius-sm); resize: vertical;" placeholder="Tell us more..."></textarea>
+          </div>
+          <button type="submit" class="button-component -filled" data-theme="dark">
+            <div class="button-component__dot"></div>
+            <div class="button-component__text-wrapper p2-mono">
+              <span class="button-component__text">Submit</span>
+              <span class="button-component__text" aria-hidden="true">Submit</span>
+            </div>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================================
+       4. HEADER
+       ================================================================ -->
+  <!-- SVG filter for liquid glass refraction -->
+  <svg class="sr-only" aria-hidden="true" style="position:absolute;width:0;height:0;">
+    <defs>
+      <filter id="liquid-glass-filter" x="-10%" y="-10%" width="120%" height="120%">
+        <!-- Subtle turbulence for organic glass distortion at edges -->
+        <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="3" result="noise"/>
+        <!-- Light displacement for refraction feel -->
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" result="refracted"/>
+        <!-- Very light blur to soften the distortion -->
+        <feGaussianBlur in="refracted" stdDeviation="0.4" result="softened"/>
+        <!-- Composite back -->
+        <feComposite in="softened" in2="SourceGraphic" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <header
+    x-data="header"
+    class="layout--header"
+    :class="{
+      '-scrolled': scrolled,
+      '-hidden': hidden && !mobileMenuOpen,
+      '-light-bg': lightBg
+    }"
+    role="banner"
+  >
+    <div class="header__inner">
+
+      <!-- Logo -->
+      <a href="/" class="header__logo" @click.prevent="scrollToTop()" aria-label="Neuraware Systems Pvt. Ltd. - Home">
+        <!-- Wordmark SVG -->
+        <svg class="header__logo-wordmark" width="120" height="29" viewBox="0 0 120 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text x="0" y="11" font-family="Inter, sans-serif" font-size="8" font-weight="500" fill="#dadada" letter-spacing="0.12em">NEURAWARE</text>
+          <text x="0" y="24" font-family="Inter, sans-serif" font-size="8" font-weight="500" fill="#dadada" letter-spacing="0.12em">FOUNDRY</text>
+        </svg>
+        <!-- Icon SVG (shows when scrolled) -->
+        <svg class="header__logo-icon" width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 55L22 10L32.5 38L43 10L57 55" stroke="#dadada" stroke-width="2" fill="none"/>
+          <path d="M2 55L32.5 2L63 55" stroke="#5c939f" stroke-width="1.5" fill="none" opacity="0.5"/>
+          <path d="M18 55L32.5 18L47 55" stroke="#ed6d40" stroke-width="1" fill="none" opacity="0.4"/>
+        </svg>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="header__nav" role="navigation" aria-label="Main navigation" @mouseleave="onNavLeave()" x-ref="nav">
+        <!-- Active section pill indicator -->
+        <div class="header__nav-pill" x-ref="navPill"></div>
+
+        <a href="#ethos" class="header__nav-link" :class="{ '-active': activeSection === 'ethos' }" data-section="ethos" @click.prevent="scrollToLink('#ethos')" @mouseenter="onNavEnter($event)">
+          <div class="nav-dot"></div>
+          <div class="nav-text p2-mono">
+            <span>WHY US</span>
+            <span aria-hidden="true">WHY US</span>
+          </div>
+        </a>
+        <a href="#portfolio" class="header__nav-link" :class="{ '-active': activeSection === 'portfolio' }" data-section="portfolio" @click.prevent="scrollToLink('#portfolio')" @mouseenter="onNavEnter($event)">
+          <div class="nav-dot"></div>
+          <div class="nav-text p2-mono">
+            <span>PORTFOLIO</span>
+            <span aria-hidden="true">PORTFOLIO</span>
+          </div>
+        </a>
+        <a href="#team" class="header__nav-link" :class="{ '-active': activeSection === 'team' }" data-section="team" @click.prevent="scrollToLink('#team')" @mouseenter="onNavEnter($event)">
+          <div class="nav-dot"></div>
+          <div class="nav-text p2-mono">
+            <span>TEAM</span>
+            <span aria-hidden="true">TEAM</span>
+          </div>
+        </a>
+        <a href="#contact" class="header__nav-link" :class="{ '-active': activeSection === 'contact' }" data-section="contact" @click.prevent="scrollToLink('#contact')" @mouseenter="onNavEnter($event)">
+          <div class="nav-dot"></div>
+          <div class="nav-text p2-mono">
+            <span>CONTACT</span>
+            <span aria-hidden="true">CONTACT</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header__actions">
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="header__menu-toggle"
+          :class="{ '-active': mobileMenuOpen }"
+          @click="toggleMobileMenu()"
+          aria-label="Toggle mobile menu"
+          :aria-expanded="mobileMenuOpen"
+        >
+          <span class="header__menu-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      x-show="mobileMenuOpen"
+      x-cloak
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      class="fixed inset-0 w-full h-full bg-core-black flex items-center justify-center"
+      style="z-index: -1; top: 0; left: 0;"
+      role="navigation"
+      aria-label="Mobile navigation"
+    >
+      <div class="grid grid-cols-1 gap-8 text-center" style="padding: 80px 24px;">
+        <a href="#ethos" class="h3 uppercase text-neural-fog" @click.prevent="scrollToLink('#ethos')">Why WQF</a>
+        <a href="#portfolio" class="h3 uppercase text-neural-fog" @click.prevent="scrollToLink('#portfolio')">Portfolio</a>
+        <a href="#team" class="h3 uppercase text-neural-fog" @click.prevent="scrollToLink('#team')">Team</a>
+        <a href="#insights" class="h3 uppercase text-neural-fog" @click.prevent="scrollToLink('#insights')">Insights</a>
+        <button class="h3 uppercase text-neural-fog" @click="toggleMobileMenu(); $dispatch('contact-modal:open', { type: 'general' })">Contact</button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================================================================
+       5. SMOOTH SCROLL WRAPPER
+       ================================================================ -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="main">
+
+
+        <!-- ==============================================================
+             6. HERO SECTION
+             ============================================================== -->
+        <section
+          x-data="homeHero"
+          class="hero relative"
+          style="height: 100dvh; min-height: 550px;"
+          aria-label="Hero"
+        >
+          <!-- Three.js Canvas -->
+          <div class="hero__canvas">
+            <canvas x-ref="heroCanvas" aria-hidden="true"></canvas>
+          </div>
+
+          <!-- Content -->
+          <div class="hero__content container">
+            <!-- Title -->
+            <h1 class="h2 uppercase text-center w-full">
+              <span class="hero-title-left inline-block" style="opacity: 0;">Forging </span>
+              <span class="hero-title-left inline-block" style="opacity: 0;">Companies </span>
+              <span class="hero-title-left hero-title-right inline-block" style="opacity: 0;">That </span>
+              <span class="hero-title-right inline-block" style="opacity: 0;">Pull </span>
+              <span class="hero-title-right inline-block" style="opacity: 0;">The </span>
+              <span class="hero-title-right inline-block" style="opacity: 0;">Future </span>
+              <span class="hero-title-right inline-block" style="opacity: 0;">Forward</span>
+            </h1>
+
+            <!-- Bottom Area -->
+            <div class="hero-bottom flex flex-col gap-8" style="border-top: 1px solid var(--color-pulse-ash); padding-top: var(--space-8); opacity: 0;">
+              <div class="flex flex-col gap-8 lg:flex-row items-start justify-between">
+                <!-- Contact Us Button -->
+                <button
+                  class="button-component"
+                  data-theme="light"
+                  @click="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                >
+                  <div class="button-component__dot"></div>
+                  <div class="button-component__text-wrapper p2-mono">
+                    <span class="button-component__text">Contact Us</span>
+                    <span class="button-component__text" aria-hidden="true">Contact Us</span>
+                  </div>
+                  <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                </button>
+
+                <!-- Description -->
+                <p class="p2 hero__subtitle" style="max-width: 540px;">
+                  Neuraware Systems Pvt. Ltd. is a venture lab that empowers breakthrough founders to pull the future forward. Capital. Connections. Mentorship. Full-stack support. We deliver more than resources&mdash;we create the infrastructure for scale.
+                </p>
+
+                <!-- WQF Logo Mark -->
+                <div class="flex-shrink-0 hidden lg:block">
+                  <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M8 55L22 10L32.5 38L43 10L57 55" stroke="#dadada" stroke-width="2" fill="none"/>
+                    <path d="M2 55L32.5 2L63 55" stroke="#5c939f" stroke-width="1.5" fill="none" opacity="0.5"/>
+                    <path d="M18 55L32.5 18L47 55" stroke="#ed6d40" stroke-width="1" fill="none" opacity="0.4"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ==============================================================
+             7. ETHOS SECTION
+             ============================================================== -->
+        <section
+          id="ethos"
+          x-data="ethos"
+          class="ethos"
+          aria-label="Our Ethos"
+        >
+          <!-- Dot matrix canvas background -->
+          <canvas class="ethos__dotmatrix" x-ref="ethosCanvas" aria-hidden="true"></canvas>
+
+          <div class="container relative" style="z-index: 1;">
+            <!-- Header -->
+            <div class="ethos__heading flex flex-col gap-6 lg:flex-row lg:gap-12 items-start justify-between">
+              <div class="flex flex-col" style="max-width: 640px;">
+                <p class="ethos__label p2-mono">Our ethos</p>
+                <h2 class="ethos__title h3 uppercase" x-data="splitTextReveal">Vision matters. Velocity wins.</h2>
+              </div>
+              <div class="ethos__heading-right flex flex-col gap-6" style="max-width: 540px;">
+                <p class="ethos__desc p2" x-data="splitTextReveal">Our comprehensive founder platform shifts the odds. With infrastructure that works. With experts who've been there. With the right pressure&mdash;pushing you forward, not under. This isn't an accelerator. It's complete company building, at the speed deep tech demands.</p>
+                <button
+                  class="button-component"
+                  data-theme="dark"
+                  @click="$dispatch('contact-modal:open', { type: 'founder' })"
+                >
+                  <div class="button-component__dot"></div>
+                  <div class="button-component__text-wrapper p2-mono">
+                    <span class="button-component__text">Join Us</span>
+                    <span class="button-component__text" aria-hidden="true">Join Us</span>
+                  </div>
+                  <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Ethos Cards – stacked / hover-expand -->
+            <ul class="ethos__cards" id="ethos-cards" x-data="{ activeCard: null }">
+
+              <!-- Card 1: Exponential Foresight -->
+              <li class="ethos__card-wrap"
+                  :class="{ '-active': activeCard === 1 }"
+                  @mouseenter="activeCard = 1" @mouseleave="activeCard = null">
+                <div class="ethos__card ethos__card--carbon" role="article">
+                  <div class="ethos__card-inner">
+                    <h3 class="ethos__card-title h5 uppercase">Exponential Foresight</h3>
+                    <div class="ethos__card-artwork">
+                      <img src="assets/icons/exponential-foresight-icon.svg" alt="" class="ethos__card-icon-img" aria-hidden="true">
+                    </div>
+                    <div class="ethos__card-footer">
+                      <p class="ethos__card-index p2-mono">01 / 04</p>
+                      <p class="p3 ethos__card-desc">We spot industry trends before they permeate the industry. Transform them into companies that matter. Some call it foresight. We call it pattern recognition at scale.</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Card 2: Full-stack support -->
+              <li class="ethos__card-wrap"
+                  :class="{ '-active': activeCard === 2 }"
+                  @mouseenter="activeCard = 2" @mouseleave="activeCard = null">
+                <div class="ethos__card ethos__card--teal" role="article">
+                  <div class="ethos__card-inner">
+                    <h3 class="ethos__card-title h5 uppercase">Full-stack support</h3>
+                    <div class="ethos__card-artwork">
+                      <img src="assets/icons/full-stack-support-icon.svg" alt="" class="ethos__card-icon-img" aria-hidden="true">
+                    </div>
+                    <div class="ethos__card-footer">
+                      <p class="ethos__card-index p2-mono">02 / 04</p>
+                      <p class="p3 ethos__card-desc">Brand, marketing, performance, legal, ops, finance, funding, and development. Tech founders need tailored support&mdash;and a dedicated team from day one.</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Card 3: Financial stability -->
+              <li class="ethos__card-wrap"
+                  :class="{ '-active': activeCard === 3 }"
+                  @mouseenter="activeCard = 3" @mouseleave="activeCard = null">
+                <div class="ethos__card ethos__card--infrared" role="article">
+                  <div class="ethos__card-inner">
+                    <h3 class="ethos__card-title h5 uppercase">Financial stability</h3>
+                    <div class="ethos__card-artwork">
+                      <img src="assets/icons/financial-support-icon.svg" alt="" class="ethos__card-icon-img" aria-hidden="true">
+                    </div>
+                    <div class="ethos__card-footer">
+                      <p class="ethos__card-index p2-mono">03 / 04</p>
+                      <p class="p3 ethos__card-desc">Breakthrough thinking shouldn't compete with rent. That's why we pay salaries from the start. You focus on building. We handle everything else.</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Card 4: Intelligent iteration -->
+              <li class="ethos__card-wrap"
+                  :class="{ '-active': activeCard === 4 }"
+                  @mouseenter="activeCard = 4" @mouseleave="activeCard = null">
+                <div class="ethos__card ethos__card--off-white" role="article">
+                  <div class="ethos__card-inner">
+                    <h3 class="ethos__card-title h5 uppercase">Intelligent iteration</h3>
+                    <div class="ethos__card-artwork">
+                      <img src="assets/icons/intelligent-iteration-icon.svg" alt="" class="ethos__card-icon-img" aria-hidden="true">
+                    </div>
+                    <div class="ethos__card-footer">
+                      <p class="ethos__card-index p2-mono">04 / 04</p>
+                      <p class="p3 ethos__card-desc">Know what you want to build? Start today. No drawn-out program or slow-moving curriculum. Just ruthless focus on product-market fit and market entry.</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- ==============================================================
+             8. FOCUS SECTION
+             ============================================================== -->
+        <section
+          x-data="focusIndustries"
+          class="bg-neural-fog text-rich-carbon"
+          aria-label="Our Focus"
+        >
+          <div class="focus relative" style="min-height: 70vh;">
+            <!-- Three.js Canvas -->
+            <canvas x-ref="focusCanvas" class="absolute inset-0 w-full h-full" style="z-index: 0;" aria-hidden="true"></canvas>
+
+            <!-- Gradient overlay -->
+            <div class="focus-gradient-overlay absolute inset-0" style="background: radial-gradient(ellipse at center, transparent 60%, rgba(245,245,247,0.6) 100%); z-index: 1; pointer-events: none;"></div>
+
+            <!-- Content -->
+            <div class="container relative flex flex-col items-center justify-center text-center" style="z-index: 2; min-height: 70vh; padding-top: var(--space-16); padding-bottom: var(--space-16);">
+              <div class="focus-intro-text" style="max-width: 900px;">
+                <p class="p1-mono text-pulse-ash mb-6">Our focus</p>
+                <h2 class="h2 uppercase mb-8" x-data="splitTextReveal">Exponential technologies. Trillion-dollar markets.</h2>
+                <p class="p1" x-data="splitTextReveal">AI, biotech, robotics, blockchain, NewSpace&mdash;these aren't incremental improvements. They're generational leaps that solve humanity's hardest challenges. They move faster than convention. So do we.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ==============================================================
+               9. INDUSTRIES SECTION
+               ============================================================== -->
+          <div class="focus-industries-list container" style="padding-top: var(--space-16); padding-bottom: var(--space-24);">
+            <div x-data="industriesList" class="industries-list" role="list" aria-label="Industries we focus on">
+
+              <!-- Industry 1 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(0) }"
+                @mouseenter="onHover(0)"
+                @click="setActive(0)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(0)">Advanced Mobility</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Autonomous aviation, smart transit, and sustainable transport reshaping movement.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(0)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Autonomous aviation, smart transit, and sustainable transport reshaping movement.</p>
+                  </div>
+                </div>
+                <!-- Highlight box with corner accents -->
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 2 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(1) }"
+                @mouseenter="onHover(1)"
+                @click="setActive(1)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(1)">Artificial Intelligence</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Transforming industries through data, automation, and intelligence at scale.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(1)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Transforming industries through data, automation, and intelligence at scale.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 3 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(2) }"
+                @mouseenter="onHover(2)"
+                @click="setActive(2)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(2)">Biotechnology &amp; Genomics</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Engineering breakthrough treatments and extending human potential through genetic innovation.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(2)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Engineering breakthrough treatments and extending human potential through genetic innovation.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 4 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(3) }"
+                @mouseenter="onHover(3)"
+                @click="setActive(3)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(3)">Blockchain &amp; DeFi</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Building transparent, secure digital economies that move faster than convention.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(3)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Building transparent, secure digital economies that move faster than convention.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 5 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(4) }"
+                @mouseenter="onHover(4)"
+                @click="setActive(4)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(4)">Next-Gen Finance</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Alternative investments to democratized financial intelligence for everyone.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(4)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Alternative investments to democratized financial intelligence for everyone.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 6 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(5) }"
+                @mouseenter="onHover(5)"
+                @click="setActive(5)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(5)">Next-Gen Consumer Tech</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Hyper-personalized, cutting-edge technologies to enrich everyday lives.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(5)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Hyper-personalized, cutting-edge technologies to enrich everyday lives.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 7 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(6) }"
+                @mouseenter="onHover(6)"
+                @click="setActive(6)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(6)">Quantum Computing</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">New paradigms in computing power, asset analysis, and fintech.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(6)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">New paradigms in computing power, asset analysis, and fintech.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 8 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(7) }"
+                @mouseenter="onHover(7)"
+                @click="setActive(7)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(7)">Robotics</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Augmenting human capability and automating the future of work.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(7)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Augmenting human capability and automating the future of work.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+              <!-- Industry 9 -->
+              <div
+                class="industries-list__item industry-item"
+                :class="{ '-expanded': isExpanded(8) }"
+                @mouseenter="onHover(8)"
+                @click="setActive(8)"
+                role="listitem"
+              >
+                <div class="flex items-center justify-between w-full">
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(8)">Space</h3>
+                  <p class="industries-list__item-desc p3 hidden lg:block">Opening new frontiers in connectivity, exploration, and orbital infrastructure.</p>
+                  <div class="industries-list__item-arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(8)">
+                  <div style="overflow: hidden;">
+                    <p class="p3" style="padding-top: var(--space-4);">Opening new frontiers in connectivity, exploration, and orbital infrastructure.</p>
+                  </div>
+                </div>
+                <div class="industries-list__item-highlight">
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ==============================================================
+             10. PORTFOLIO SECTION
+             ============================================================== -->
+        <section
+          id="portfolio"
+          x-data="slider({ spaceBetween: 24, initialSlide: 0 })"
+          class="portfolio bg-rich-carbon text-neural-fog"
+          aria-label="Portfolio"
+        >
+          <div class="container">
+            <!-- Heading -->
+            <div class="portfolio__heading flex flex-col gap-4 lg:flex-row lg:gap-12 items-start justify-between">
+              <div>
+                <p class="p1-mono text-pulse-ash mb-4">Our portfolio</p>
+                <h2 class="h5 uppercase" x-data="splitTextReveal">Our companies don't just enter markets. They define them.</h2>
+              </div>
+              <a href="/portfolio" class="button-component" data-theme="light">
+                <div class="button-component__dot"></div>
+                <div class="button-component__text-wrapper p2-mono">
+                  <span class="button-component__text">Explore our portfolio</span>
+                  <span class="button-component__text" aria-hidden="true">Explore our portfolio</span>
+                </div>
+                <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Swiper -->
+          <div class="swiper" x-ref="swiperContainer" style="padding: 0 24px;">
+            <div class="swiper-wrapper">
+
+              <!-- Card 1: Alpha Deal -->
+              <div class="swiper-slide">
+                <a href="https://www.alphadeal.ai/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #1b6b5a;" @mouseenter="$el.style.backgroundColor='#228570'" @mouseleave="$el.style.backgroundColor='#1b6b5a'">
+                  <div>
+                    <h3 class="h5 mb-4">Alpha Deal</h3>
+                  </div>
+                  <div class="portfolio-card__desc">
+                    <p class="p2">Private asset analysis, reimagined.</p>
+                  </div>
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </a>
+              </div>
+
+              <!-- Card 2: Edda -->
+              <div class="swiper-slide">
+                <a href="https://joinedda.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #6b3fa0;" @mouseenter="$el.style.backgroundColor='#7d4fba'" @mouseleave="$el.style.backgroundColor='#6b3fa0'">
+                  <div>
+                    <h3 class="h5 mb-4">Edda</h3>
+                  </div>
+                  <div class="portfolio-card__desc">
+                    <p class="p2">A better, social-first, audio book streaming platform.</p>
+                  </div>
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </a>
+              </div>
+
+              <!-- Card 3: Novyra -->
+              <div class="swiper-slide">
+                <a href="https://novyra.ai/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #c75530;" @mouseenter="$el.style.backgroundColor='#d9663f'" @mouseleave="$el.style.backgroundColor='#c75530'">
+                  <div>
+                    <h3 class="h5 mb-4">Novyra</h3>
+                  </div>
+                  <div class="portfolio-card__desc">
+                    <p class="p2">Precision matching for clinical oncology trials.</p>
+                  </div>
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </a>
+              </div>
+
+              <!-- Card 4: Stratahub -->
+              <div class="swiper-slide">
+                <a href="https://stratahub.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #2563eb;" @mouseenter="$el.style.backgroundColor='#3b82f6'" @mouseleave="$el.style.backgroundColor='#2563eb'">
+                  <div>
+                    <h3 class="h5 mb-4">Stratahub</h3>
+                  </div>
+                  <div class="portfolio-card__desc">
+                    <p class="p2">AI-readiness hub that transforms fragmented, raw enterprise data into a structured, actionable form.</p>
+                  </div>
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </a>
+              </div>
+
+              <!-- Card 5: Remix Labs -->
+              <div class="swiper-slide">
+                <a href="https://remixlabs.ai/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #d4a017;" @mouseenter="$el.style.backgroundColor='#e0b42e'" @mouseleave="$el.style.backgroundColor='#d4a017'">
+                  <div>
+                    <h3 class="h5 mb-4">Remix Labs</h3>
+                  </div>
+                  <div class="portfolio-card__desc">
+                    <p class="p2">Advanced time series modeling for tomorrow's data flows.</p>
+                  </div>
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </a>
+              </div>
+
+              <!-- Card 6: US Autonomous Systems -->
+              <div class="swiper-slide">
+                <div class="portfolio-card corner-accent-parent" style="background-color: #0ea5a0;" @mouseenter="$el.style.backgroundColor='#14b8b3'" @mouseleave="$el.style.backgroundColor='#0ea5a0'">
+                  <div>
+                    <h3 class="h5 mb-4">US Autonomous Systems</h3>
+                  </div>
+                  <div class="portfolio-card__desc">
+                    <p class="p2">American-made drone accessories for frontline rescue and law enforcement.</p>
+                  </div>
+                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="container">
+            <div class="portfolio__nav">
+              <button class="portfolio__nav-btn" @click="prev()" :disabled="isBeginning" aria-label="Previous portfolio company">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M8.5 2.5L4 7L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="portfolio__nav-btn" @click="next()" :disabled="isEnd" aria-label="Next portfolio company">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5.5 2.5L10 7L5.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ==============================================================
+             11. LEADERSHIP SECTION
+             ============================================================== -->
+        <section
+          id="team"
+          x-data="partners"
+          class="partners bg-rich-carbon text-neural-fog"
+          style="border-radius: var(--radius-xl) var(--radius-xl) 0 0; position: relative; z-index: 2;"
+          aria-label="Leadership Team"
+        >
+          <div class="container">
+            <!-- Header Bar -->
+            <div class="flex items-center justify-between mb-12" style="border-bottom: 1px solid var(--color-pulse-ash); padding-bottom: var(--space-6);">
+              <p class="p2-mono text-pulse-ash">Our Leadership Team</p>
+            </div>
+
+            <!-- Team Cards Grid -->
+            <div class="partners__grid mb-12">
+
+              <!-- Card 1: Igor Tulchinsky -->
+              <div
+                class="team-card partner-card"
+                :class="{ '-active': isActive(0) }"
+                data-name="Igor Tulchinsky"
+                data-bio="Chairman of the Office of the CIO and Head of Research of Neuraware—a global quantitative asset management firm with $7B+ AUM operating across 27 offices worldwide."
+                data-linkedin="https://www.linkedin.com/in/igortulchinsky/"
+                @mouseenter="expandPartner(0)"
+                @mouseleave="collapsePartner(0)"
+                @click="expandPartner(0)"
+                role="article"
+              >
+                <img
+                  src="assets/images/WQF__0000_Founder-IgorTulchinsky.jpg"
+                  alt="Igor Tulchinsky, Founder"
+                  class="team-card__image"
+                  loading="lazy"
+                >
+                <div class="team-card__info">
+                  <div class="team-card__dot"></div>
+                  <p class="team-card__role p3-mono">Founder</p>
+                </div>
+              </div>
+
+              <!-- Card 2: Amir Husain -->
+              <div
+                class="team-card partner-card"
+                :class="{ '-active': isActive(1) }"
+                data-name="Amir Husain"
+                data-bio="AI and defense pioneer who led SparkCognition to unicorn status, served as CEO of Boeing joint venture SkyGrid, and was named Austin's 40 Under 40."
+                data-linkedin="https://www.linkedin.com/in/amirhusain/"
+                @mouseenter="expandPartner(1)"
+                @mouseleave="collapsePartner(1)"
+                @click="expandPartner(1)"
+                role="article"
+              >
+                <img
+                  src="assets/images/WQF__0004_Chairman-and-Co-Founder_Amir-Husain-2.jpg"
+                  alt="Amir Husain, Chairman"
+                  class="team-card__image"
+                  loading="lazy"
+                >
+                <div class="team-card__info">
+                  <div class="team-card__dot"></div>
+                  <p class="team-card__role p3-mono">Chairman</p>
+                </div>
+              </div>
+
+              <!-- Card 3: Steven Lau -->
+              <div
+                class="team-card partner-card"
+                :class="{ '-active': isActive(2) }"
+                data-name="Steven Lau"
+                data-bio="Investor in 150+ startups across fintech, biotech, robotics, and AI, including notable companies like Dataminr, IonQ, FigureAI, and Verge Genomics."
+                data-linkedin="https://www.linkedin.com/in/steven-lau-54a25552/"
+                @mouseenter="expandPartner(2)"
+                @mouseleave="collapsePartner(2)"
+                @click="expandPartner(2)"
+                role="article"
+              >
+                <img
+                  src="assets/images/WQF__0005_CEO-and-Co-Founder_Steven-Lau.jpg"
+                  alt="Steven Lau, CEO"
+                  class="team-card__image"
+                  loading="lazy"
+                >
+                <div class="team-card__info">
+                  <div class="team-card__dot"></div>
+                  <p class="team-card__role p3-mono">CEO</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Title & Description -->
+            <div class="flex flex-col gap-8 lg:flex-row lg:gap-12 items-start justify-between mb-12">
+              <h2 class="partners-title h5 uppercase" style="max-width: 600px;">We spot trends before they're trends. Transform them into companies that matter.</h2>
+              <div style="max-width: 480px;">
+                <p class="p2 mb-6" x-data="splitTextReveal">A global network of advisors, operators and investors. The people who built what's now, helping you build what's next.</p>
+                <a href="/about" class="button-component" data-theme="light">
+                  <div class="button-component__dot"></div>
+                  <div class="button-component__text-wrapper p2-mono">
+                    <span class="button-component__text">Meet the team</span>
+                    <span class="button-component__text" aria-hidden="true">Meet the team</span>
+                  </div>
+                  <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Partner Detail Panel -->
+            <div class="flex flex-col gap-4" style="border-top: 1px solid var(--color-pulse-ash); padding-top: var(--space-8);">
+              <div class="flex items-center gap-4">
+                <h3 class="h6" x-text="getPartnerInfo().name">Igor Tulchinsky</h3>
+                <span class="p3-mono text-electric-teal" style="border: 1px solid var(--color-electric-teal); padding: 2px 8px; border-radius: var(--radius-pill);">Leadership</span>
+              </div>
+              <div class="flex items-center gap-6">
+                <a :href="getPartnerInfo().linkedin" target="_blank" rel="noopener noreferrer" class="team-card__linkedin p3-mono" aria-label="View LinkedIn profile">
+                  LinkedIn
+                  <svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+                </a>
+                <button class="p3-mono text-electric-teal" @click="$dispatch('team-modal:open', { index: activePartnerIndex })">Full Bio</button>
+              </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="flex items-center gap-4 mt-8 md:hidden">
+              <button class="portfolio__nav-btn" @click="prevPartner()" aria-label="Previous partner">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M10.08 13H8.02L4 9.02L8.02 5H10.08L6.93 8.28H14V9.77H6.93L10.08 13Z" fill="currentColor"/></svg>
+              </button>
+              <span class="p2-mono" x-text="pad(activePartnerIndex + 1) + ' / 03'">01 / 03</span>
+              <button class="portfolio__nav-btn" @click="nextPartner()" aria-label="Next partner">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+
+
+
+        <!-- ==============================================================
+             13. FOUNDERS SECTION
+             ============================================================== -->
+        <section
+          x-data="founders"
+          class="investors bg-rich-carbon text-neural-fog"
+          aria-label="For Founders"
+        >
+          <div class="container">
+            <div class="investors__layout">
+
+              <!-- Sidebar -->
+              <div class="investors__sidebar founders-sidebar">
+                <p class="p2-mono text-pulse-ash mb-4">Founders</p>
+                <h2 class="founders-heading h4 uppercase mb-6">Build fast, with zero friction and total focus.</h2>
+                <p class="p2 mb-8" x-data="splitTextReveal">Skip the noise and build with a launch-ready team, deep resources, and immediate market access from day one.</p>
+                <button
+                  class="button-component"
+                  data-theme="light"
+                  @click="$dispatch('contact-modal:open', { type: 'founder' })"
+                >
+                  <div class="button-component__dot"></div>
+                  <div class="button-component__text-wrapper p2-mono">
+                    <span class="button-component__text">Build with us</span>
+                    <span class="button-component__text" aria-hidden="true">Build with us</span>
+                  </div>
+                  <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                  <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                </button>
+              </div>
+
+              <!-- Cards -->
+              <div class="investors__content">
+
+                <!-- Card 1 -->
+                <div class="stacked-card stacked-card--teal founder-card" role="article">
+                  <div>
+                    <p class="p2-mono mb-4">01</p>
+                    <h3 class="h5 uppercase mb-6">Move at the speed of breakthrough.</h3>
+                    <p class="p2">Start building today with expert support, capital on demand, and market focus.</p>
+                  </div>
+                  <div class="flex justify-end mt-8">
+                    <img src="assets/icons/home-4.svg" alt="" width="48" height="48" aria-hidden="true" loading="lazy">
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="stacked-card stacked-card--infrared founder-card" role="article">
+                  <div>
+                    <p class="p2-mono mb-4">02</p>
+                    <h3 class="h5 uppercase mb-6">Full-stack infrastructure, ready from day one.</h3>
+                    <p class="p2">Launch-ready operations, lean teams, and founder salaries paid from the start.</p>
+                  </div>
+                  <div class="flex justify-end mt-8">
+                    <img src="assets/icons/home-5.svg" alt="" width="48" height="48" aria-hidden="true" loading="lazy">
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="stacked-card stacked-card--off-white founder-card" role="article">
+                  <div>
+                    <p class="p2-mono mb-4">03</p>
+                    <h3 class="h5 uppercase mb-6">Connections that move you forward.</h3>
+                    <p class="p2">Expert mentorship, committed customers, and a cohort that matches your pace.</p>
+                  </div>
+                  <div class="flex justify-end mt-8">
+                    <img src="assets/icons/home-6.svg" alt="" width="48" height="48" aria-hidden="true" loading="lazy">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ==============================================================
+             15. FOOTER
+             ============================================================== -->
+        <footer
+          id="contact"
+          x-data="footer"
+          class="footer"
+          role="contentinfo"
+        >
+          <!-- Left: Canvas Panel (hidden on mobile) -->
+          <div class="footer__canvas-panel">
+            <canvas x-ref="footerCanvas" aria-hidden="true"></canvas>
+          </div>
+
+          <!-- Right: Infrared Panel -->
+          <div class="footer__info-panel">
+
+            <!-- CTA -->
+            <div class="footer__cta">
+              <h2 class="footer__cta-title h6 uppercase">Own what's next.</h2>
+              <p class="p2 mb-8">Breakthrough founders. Pre-market investors. Transformative partners. Reach out, and let's move.</p>
+              <button
+                class="button-component"
+                data-theme="dark"
+                @click="$dispatch('contact-modal:open', { type: 'general' })"
+              >
+                <div class="button-component__dot"></div>
+                <div class="button-component__text-wrapper p2-mono">
+                  <span class="button-component__text">Contact Us</span>
+                  <span class="button-component__text" aria-hidden="true">Contact Us</span>
+                </div>
+                <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+                <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
+              </button>
+            </div>
+
+            <!-- WQF Emblem -->
+            <div class="footer-emblem mb-12">
+              <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Neuraware Systems Pvt. Ltd. emblem">
+                <path d="M8 55L22 10L32.5 38L43 10L57 55" stroke="#090909" stroke-width="2" fill="none"/>
+                <path d="M2 55L32.5 2L63 55" stroke="#090909" stroke-width="1.5" fill="none" opacity="0.5"/>
+                <path d="M18 55L32.5 18L47 55" stroke="#090909" stroke-width="1" fill="none" opacity="0.4"/>
+              </svg>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer__links">
+
+              <!-- Nav Links (with dot animation) -->
+              <nav class="footer__nav" aria-label="Footer navigation">
+                <a href="#ethos" class="footer__nav-link h5 uppercase">
+                  <div class="nav-dot"></div>
+                  <div class="nav-text">
+                    <span>WHY US</span>
+                    <span aria-hidden="true">WHY US</span>
+                  </div>
+                </a>
+                <a href="#portfolio" class="footer__nav-link h5 uppercase">
+                  <div class="nav-dot"></div>
+                  <div class="nav-text">
+                    <span>PORTFOLIO</span>
+                    <span aria-hidden="true">PORTFOLIO</span>
+                  </div>
+                </a>
+                <a href="#team" class="footer__nav-link h5 uppercase">
+                  <div class="nav-dot"></div>
+                  <div class="nav-text">
+                    <span>TEAM</span>
+                    <span aria-hidden="true">TEAM</span>
+                  </div>
+                </a>
+                <a href="#insights" class="footer__nav-link h5 uppercase">
+                  <div class="nav-dot"></div>
+                  <div class="nav-text">
+                    <span>INSIGHTS</span>
+                    <span aria-hidden="true">INSIGHTS</span>
+                  </div>
+                </a>
+                <button class="footer__nav-link h5 uppercase" @click="$dispatch('contact-modal:open', { type: 'general' })">
+                  <div class="nav-dot"></div>
+                  <div class="nav-text">
+                    <span>Contact</span>
+                    <span aria-hidden="true">Contact</span>
+                  </div>
+                </button>
+              </nav>
+
+              <!-- From Neuraware -->
+              <div>
+                <p class="footer__links-group-title p3-mono">From Neuraware</p>
+                <ul class="footer__links-list">
+                  <li><a href="https://worldquantventures.com" target="_blank" rel="noopener noreferrer" class="p3">Ventures</a></li>
+                  <li><a href="https://wqu.edu" target="_blank" rel="noopener noreferrer" class="p3">University</a></li>
+                </ul>
+              </div>
+
+              <!-- Legal -->
+              <div>
+                <p class="footer__links-group-title p3-mono">Legal</p>
+                <ul class="footer__links-list">
+                  <li><a href="/whistleblower-protection" class="p3">Whistleblower Protection Statement</a></li>
+                  <li><a href="/privacy-policy" class="p3">Privacy Policy</a></li>
+                  <li><a href="/terms-and-conditions" class="p3">Terms and Conditions</a></li>
+                  <li><a href="/cookie-policy" class="p3">Cookie Policy</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Footer Legal Bar -->
+            <div class="footer__legal">
+              <div class="footer__legal-links">
+                <a href="https://serieseight.com" target="_blank" rel="noopener noreferrer" class="p4-mono">Site by Series Eight</a>
+              </div>
+              <p class="p4-mono">Copyright &copy; 2026 Neuraware Systems Pvt. Ltd.</p>
+            </div>
+
+          </div>
+        </footer>
+
+
+      </main>
+    </div>
+  </div>
+
+
+  <!-- ================================================================
+       SCRIPTS
+       ================================================================ -->
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Our code (registers Alpine components via alpine:init listener) -->
+  <script src="js/main.js"></script>
+  <!-- Alpine (must load LAST so alpine:init fires after our listener is registered) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+</body>
+</html>
