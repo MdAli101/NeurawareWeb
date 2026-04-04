@@ -460,7 +460,13 @@ document.addEventListener('alpine:init', () => {
         this.scrolled = y > vh * 0.25;
         this.hidden = direction === 'down' && y > vh;
         this.lastScroll = y;
-        detectBg();
+
+        // In the hero zone, always dark — don't sample
+        if (y < vh * 0.8) {
+          this.lightBg = false;
+        } else {
+          detectBg();
+        }
 
         // Clear active section if at the very top
         if (y < vh * 0.3) {
@@ -552,19 +558,16 @@ document.addEventListener('alpine:init', () => {
       }
 
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      tl.fromTo('.hero-title-left',
-        { clipPath: 'inset(0 100% 0 0)', x: -60, opacity: 0 },
-        { clipPath: 'inset(0 0% 0 0)', x: 0, opacity: 1, duration: 1, stagger: 0.08 }
+      tl.from('.hero-title-left',
+        { x: -40, opacity: 0, duration: 0.9, stagger: 0.08 }
       )
-      .fromTo('.hero-title-right',
-        { clipPath: 'inset(0 0 0 100%)', x: 60, opacity: 0 },
-        { clipPath: 'inset(0 0 0 0%)', x: 0, opacity: 1, duration: 1, stagger: 0.08 },
-        '<0.15'
+      .from('.hero-title-right',
+        { x: 40, opacity: 0, duration: 0.9, stagger: 0.08 },
+        '<0.1'
       )
-      .fromTo('.hero-bottom',
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        '-=0.4'
+      .from('.hero-bottom',
+        { y: 30, opacity: 0, duration: 0.7 },
+        '-=0.3'
       );
     },
 
@@ -609,31 +612,13 @@ document.addEventListener('alpine:init', () => {
     init() {
       if (prefersReducedMotion || typeof gsap === 'undefined') return;
       const el = this.$el;
-      const text = el.textContent.trim();
-      const words = text.split(/\s+/);
-      el.innerHTML = '';
 
-      words.forEach((word, i) => {
-        const outer = document.createElement('span');
-        outer.style.display = 'inline-block';
-        outer.style.overflow = 'hidden';
-        outer.style.verticalAlign = 'top';
-        const inner = document.createElement('span');
-        inner.style.display = 'inline-block';
-        inner.textContent = word + (i < words.length - 1 ? '\u00a0' : '');
-        inner.classList.add('split-word');
-        outer.appendChild(inner);
-        el.appendChild(outer);
+      // Simple fade-up on the whole element — no innerHTML manipulation
+      gsap.from(el, {
+        y: 25, opacity: 0,
+        duration: 0.7, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' },
       });
-
-      gsap.fromTo(el.querySelectorAll('.split-word'),
-        { clipPath: 'inset(0 0 100% 0)', y: 20 },
-        {
-          clipPath: 'inset(0 0 0% 0)', y: 0,
-          duration: 0.6, stagger: 0.04, ease: 'power2.out',
-          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
-        }
-      );
     },
   }));
 
@@ -916,15 +901,15 @@ document.addEventListener('alpine:init', () => {
     },
 
     getTitle() {
-      return { investor: 'Investor Inquiry', founder: 'Founder Application',
-        partner: 'Partnership Inquiry', general: 'Contact Us' }[this.contactType] || 'Contact Us';
+      return { investor: 'Partnership Inquiry', founder: 'Learn More',
+        partner: 'Partnership Inquiry', general: 'Get in Touch' }[this.contactType] || 'Get in Touch';
     },
 
     getDescription() {
-      return { investor: 'Interested in investing? Tell us more about yourself.',
-        founder: 'Have a company or idea? We would love to hear from you.',
-        partner: 'Interested in partnering with Neuraware Systems Pvt. Ltd.?',
-        general: 'Get in touch with our team.' }[this.contactType] || 'Get in touch with our team.';
+      return { investor: 'Interested in partnering with Neuraware Systems?',
+        founder: 'Want to learn more about our technology platform?',
+        partner: 'Interested in partnering with Neuraware Systems?',
+        general: 'Whether you\'re a healthcare partner, a student curious about semiconductors, or someone who believes heart disease detection should be better — we\'d love to hear from you.' }[this.contactType] || 'We\'d love to hear from you.';
     },
   }));
 
@@ -934,9 +919,13 @@ document.addEventListener('alpine:init', () => {
 // 3. Initialize GSAP on DOM Ready
 // ---------------------------------------------------------------------------
 
+// Register ScrollTrigger IMMEDIATELY — Alpine components need it during init()
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
+  if (typeof ScrollTrigger !== 'undefined') {
     window.addEventListener('load', () => ScrollTrigger.refresh());
     window.addEventListener('resize', debounce(() => ScrollTrigger.refresh(), 300));
   }
