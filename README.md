@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/images/fineArtmacro.jpg" alt="Neuraware Systems Logo" width="200"/>
+<img src="assets/images/fineArtmacro.jpg" alt="Neuraware Systems Logo" />
 
 # Neuraware Systems Private Limited
 
