@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/images/fineArtmacro.jpg" alt="Neuraware Systems Logo" />
+<img src="assets/icons/Logo2.jpg" alt="Neuraware Systems Logo" />
 
 # Neuraware Systems Private Limited
 
@@ -66,6 +66,8 @@ NeurawareWeb/
 **🧠 Cardiac AI Models** — Deep learning models trained for maximum diagnostic accuracy, optimized for deployment on resource-constrained hardware.
 
 ---
+
+<img src="assets/images/fineArtmacro.jpg" alt="Neuraware Systems Logo" />
 
 ## Young Innovators Initiative (YII)
 
