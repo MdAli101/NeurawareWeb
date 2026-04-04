@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/images/fineArtmacro.jpg" alt="Neuraware Systems Logo" width="200"/>
+
 # Neuraware Systems Private Limited
 
 ### AI-Powered Cardiac Diagnostics. On a Chip.
