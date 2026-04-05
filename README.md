@@ -67,7 +67,7 @@ NeurawareWeb/
 
 ---
 
-<img src="assets/images/fineArtmacro.jpg" alt="Neuraware Systems Logo" />
+<img src="assets/images/Neuraware microchip close-up shot.png" alt="Neuraware Systems Logo"/>
 
 ## Young Innovators Initiative (YII)
 
