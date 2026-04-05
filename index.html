@@ -67,62 +67,22 @@
       <div class="swiper" style="padding: 0 24px 48px;">
         <div class="swiper-wrapper">
 
-          <!-- Slide 1: Igor Tulchinsky -->
+          <!-- Slide 1: Mohammed Samsh Tabrej -->
           <div class="swiper-slide">
             <div class="flex flex-col gap-8">
               <div class="overflow-hidden" style="border-radius: var(--radius-lg);">
                 <img
-                  src="assets/images/WQF__0000_Founder-IgorTulchinsky.jpg"
-                  alt="Igor Tulchinsky, Founder of Neuraware Systems Pvt. Ltd."
+                  src="assets/images/founder.png"
+                  alt="Mohammed Samsh Tabrej, Founder &amp; Director of Neuraware Systems Pvt. Ltd."
                   class="w-full"
                   style="aspect-ratio: 3/4; object-fit: cover;"
                   loading="lazy"
                 >
               </div>
               <div>
-                <h5 class="h5 uppercase mb-4">Igor Tulchinsky</h5>
-                <p class="p2-mono text-electric-teal mb-6">Founder</p>
-                <p class="p2 text-neural-fog">Chairman of the Office of the CIO and Head of Research of Neuraware&mdash;a global quantitative asset management firm with $7B+ AUM operating across 27 offices worldwide.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2: Amir Husain -->
-          <div class="swiper-slide">
-            <div class="flex flex-col gap-8">
-              <div class="overflow-hidden" style="border-radius: var(--radius-lg);">
-                <img
-                  src="assets/images/WQF__0004_Chairman-and-Co-Founder_Amir-Husain-2.jpg"
-                  alt="Amir Husain, Chairman of Neuraware Systems Pvt. Ltd."
-                  class="w-full"
-                  style="aspect-ratio: 3/4; object-fit: cover;"
-                  loading="lazy"
-                >
-              </div>
-              <div>
-                <h5 class="h5 uppercase mb-4">Amir Husain</h5>
-                <p class="p2-mono text-electric-teal mb-6">Chairman</p>
-                <p class="p2 text-neural-fog">AI and defense pioneer who led SparkCognition to unicorn status, served as CEO of Boeing joint venture SkyGrid, and was named Austin's 40 Under 40.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3: Steven Lau -->
-          <div class="swiper-slide">
-            <div class="flex flex-col gap-8">
-              <div class="overflow-hidden" style="border-radius: var(--radius-lg);">
-                <img
-                  src="assets/images/WQF__0005_CEO-and-Co-Founder_Steven-Lau.jpg"
-                  alt="Steven Lau, CEO of Neuraware Systems Pvt. Ltd."
-                  class="w-full"
-                  style="aspect-ratio: 3/4; object-fit: cover;"
-                  loading="lazy"
-                >
-              </div>
-              <div>
-                <h5 class="h5 uppercase mb-4">Steven Lau</h5>
-                <p class="p2-mono text-electric-teal mb-6">CEO</p>
-                <p class="p2 text-neural-fog">Investor in 150+ startups across fintech, biotech, robotics, and AI, including notable companies like Dataminr, IonQ, FigureAI, and Verge Genomics.</p>
+                <h5 class="h5 uppercase mb-4">Mohammed Samsh Tabrej</h5>
+                <p class="p2-mono text-electric-teal mb-6">Founder &amp; Director</p>
+                <p class="p2 text-neural-fog">Engineer and entrepreneur building India's next generation of AI-powered medical devices on custom silicon. Leading Neuraware's mission to make cardiac diagnostics accessible, accurate, and self-reliant&mdash;from chip architecture to clinical deployment.</p>
               </div>
             </div>
           </div>
@@ -137,7 +97,7 @@
             <path d="M10.08 13H8.02L4 9.02L8.02 5H10.08L6.93 8.28H14V9.77H6.93L10.08 13Z" fill="currentColor"/>
           </svg>
         </button>
-        <span class="p2-mono" x-text="swiper ? pad(swiper.activeIndex + 1) + ' / 3' : '01 / 3'">01 / 3</span>
+        <span class="p2-mono" x-text="swiper ? pad(swiper.activeIndex + 1) + ' / 1' : '01 / 1'">01 / 1</span>
         <button @click="next()" class="portfolio__nav-btn" aria-label="Next team member">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/>
@@ -201,8 +161,8 @@
           <button type="submit" class="button-component -filled" data-theme="dark">
             <div class="button-component__dot"></div>
             <div class="button-component__text-wrapper p2-mono">
-              <span class="button-component__text">Submit</span>
-              <span class="button-component__text" aria-hidden="true">Submit</span>
+              <span class="button-component__text">Send Message</span>
+              <span class="button-component__text" aria-hidden="true">Send Message</span>
             </div>
           </button>
         </form>
@@ -245,17 +205,7 @@
 
       <!-- Logo -->
       <a href="/" class="header__logo" @click.prevent="scrollToTop()" aria-label="Neuraware Systems Pvt. Ltd. - Home">
-        <!-- Wordmark SVG -->
-        <svg class="header__logo-wordmark" width="120" height="29" viewBox="0 0 120 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <text x="0" y="11" font-family="Inter, sans-serif" font-size="8" font-weight="500" fill="#dadada" letter-spacing="0.12em">NEURAWARE</text>
-          <text x="0" y="24" font-family="Inter, sans-serif" font-size="8" font-weight="500" fill="#dadada" letter-spacing="0.12em">SYSTEMS</text>
-        </svg>
-        <!-- Icon SVG (shows when scrolled) -->
-        <svg class="header__logo-icon" width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M8 55L22 10L32.5 38L43 10L57 55" stroke="#dadada" stroke-width="2" fill="none"/>
-          <path d="M2 55L32.5 2L63 55" stroke="#5c939f" stroke-width="1.5" fill="none" opacity="0.5"/>
-          <path d="M18 55L32.5 18L47 55" stroke="#ed6d40" stroke-width="1" fill="none" opacity="0.4"/>
-        </svg>
+        <img src="assets/icons/NEURAWARE_banner_blackbg_w0BG.png" alt="Neuraware Systems" class="header__logo-img" style="height: 250px; width: auto; margin-top: 12px;">
       </a>
 
       <!-- Desktop Navigation -->
@@ -270,14 +220,14 @@
             <span aria-hidden="true">ABOUT</span>
           </div>
         </a>
-        <a href="#portfolio" class="header__nav-link" :class="{ '-active': activeSection === 'portfolio' }" data-section="portfolio" @click.prevent="scrollToLink('#portfolio')" @mouseenter="onNavEnter($event)">
+        <a href="#initiative" class="header__nav-link" :class="{ '-active': activeSection === 'initiative' }" data-section="initiative" @click.prevent="scrollToLink('#initiative')" @mouseenter="onNavEnter($event)">
           <div class="nav-dot"></div>
           <div class="nav-text p2-mono">
             <span>INITIATIVE</span>
             <span aria-hidden="true">INITIATIVE</span>
           </div>
         </a>
-        <a href="#team" class="header__nav-link" :class="{ '-active': activeSection === 'team' }" data-section="team" @click.prevent="scrollToLink('#team')" @mouseenter="onNavEnter($event)">
+<a href="#team" class="header__nav-link" :class="{ '-active': activeSection === 'team' }" data-section="team" @click.prevent="scrollToLink('#team')" @mouseenter="onNavEnter($event)">
           <div class="nav-dot"></div>
           <div class="nav-text p2-mono">
             <span>TEAM</span>
@@ -331,14 +281,14 @@
             <span aria-hidden="true">About</span>
           </div>
         </a>
-        <a href="#portfolio" class="mobile-nav-link" @click.prevent="scrollToLink('#portfolio')">
+        <a href="#initiative" class="mobile-nav-link" @click.prevent="scrollToLink('#initiative')">
           <div class="nav-dot"></div>
           <div class="nav-text h4 uppercase">
             <span>Initiative</span>
             <span aria-hidden="true">Initiative</span>
           </div>
         </a>
-        <a href="#team" class="mobile-nav-link" @click.prevent="scrollToLink('#team')">
+<a href="#team" class="mobile-nav-link" @click.prevent="scrollToLink('#team')">
           <div class="nav-dot"></div>
           <div class="nav-text h4 uppercase">
             <span>Team</span>
@@ -389,7 +339,7 @@
               <span class="hero-title-right inline-block">Our </span>
               <span class="hero-title-right inline-block">Chip. </span>
               <br>
-              <span class="hero-title-left hero-title-right inline-block">Clinical </span>
+              <span class="hero-title-left inline-block">Clinical </span>
               <span class="hero-title-right inline-block">Accuracy.</span>
             </h1>
 
@@ -418,13 +368,9 @@
                   Neuraware Systems builds AI-powered medical devices on FPGA-based platforms that detect cardiac abnormalities with clinical-grade accuracy&mdash;bringing hospital-level heart diagnostics to the edge. Backed by the Government of India's Chip to Startup (C2S) Programme.
                 </p>
 
-                <!-- WQF Logo Mark -->
+                <!-- Hero Logo -->
                 <div class="flex-shrink-0 hidden lg:block">
-                  <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M8 55L22 10L32.5 38L43 10L57 55" stroke="#dadada" stroke-width="2" fill="none"/>
-                    <path d="M2 55L32.5 2L63 55" stroke="#5c939f" stroke-width="1.5" fill="none" opacity="0.5"/>
-                    <path d="M18 55L32.5 18L47 55" stroke="#ed6d40" stroke-width="1" fill="none" opacity="0.4"/>
-                  </svg>
+                  <img src="assets/icons/HERO_LOGO_w0BG.png" alt="Neuraware Systems" style="height: 175px; width: auto; margin-top: -50px;">
                 </div>
               </div>
             </div>
@@ -450,21 +396,6 @@
               </div>
               <div class="ethos__heading-right flex flex-col gap-6" style="max-width: 540px;">
                 <p class="ethos__desc p2" x-data="splitTextReveal">Heart disease is the world's leading cause of death. Early detection saves lives&mdash;but access to accurate diagnostics remains unequal. We're changing that. Our FPGA-based AI platform brings real-time cardiac analysis to the point of care, no cloud required. Just the chip, the patient, and the answer.</p>
-                <button
-                  class="button-component"
-                  data-theme="dark"
-                  @click="$dispatch('contact-modal:open', { type: 'founder' })"
-                >
-                  <div class="button-component__dot"></div>
-                  <div class="button-component__text-wrapper p2-mono">
-                    <span class="button-component__text">Learn More</span>
-                    <span class="button-component__text" aria-hidden="true">Learn More</span>
-                  </div>
-                  <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                  <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                  <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                  <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                </button>
               </div>
             </div>
 
@@ -552,6 +483,7 @@
              8. FOCUS SECTION
              ============================================================== -->
         <section
+          id="focus"
           x-data="focusIndustries"
           class="text-rich-carbon"
           style="background-color: #ffffff;"
@@ -729,8 +661,9 @@
                 class="industries-list__item industry-item"
                 :class="{ '-expanded': isExpanded(5) }"
                 @mouseenter="onHover(5)"
-                @click="setActive(5)"
+                @click="(() => { const triggers = ScrollTrigger.getAll(); const t = triggers.find(st => st.vars.trigger && st.vars.trigger.id === 'why-it-matters'); if (t) { window.scrollTo({ top: t.start + (t.end - t.start) * 0.85, behavior: 'smooth' }); } })()"
                 role="listitem"
+                style="cursor: pointer;"
               >
                 <div class="flex items-center justify-between w-full">
                   <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(5)">Young Innovators Initiative</h3>
@@ -758,148 +691,90 @@
 
 
         <!-- ==============================================================
-             10. PORTFOLIO SECTION
+             INITIATIVE SECTION
              ============================================================== -->
         <section
-          id="portfolio"
-          x-data="slider({ spaceBetween: 24, initialSlide: 0 })"
-          class="portfolio bg-rich-carbon text-neural-fog"
-          aria-label="Portfolio"
+          id="initiative"
+          class="initiative"
+          x-data="initiative"
+          aria-label="Our Initiative"
         >
-          <div class="container">
-            <!-- Heading -->
-            <div class="portfolio__heading flex flex-col gap-4 lg:flex-row lg:gap-12 items-start justify-between">
-              <div>
-                <p class="p1-mono text-pulse-ash mb-4">Our portfolio</p>
-                <h2 class="h5 uppercase" x-data="splitTextReveal">Our companies don't just enter markets. They define them.</h2>
-              </div>
-              <a href="/portfolio" class="button-component" data-theme="light">
-                <div class="button-component__dot"></div>
-                <div class="button-component__text-wrapper p2-mono">
-                  <span class="button-component__text">Explore our portfolio</span>
-                  <span class="button-component__text" aria-hidden="true">Explore our portfolio</span>
-                </div>
-                <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-              </a>
-            </div>
+          <!-- Text (behind image initially, revealed after morph) -->
+          <div class="initiative__text container" x-ref="textBlock">
+            <p class="initiative__label" x-ref="label">Young Innovators Initiative</p>
+            <p class="initiative__tagline" x-ref="tagline">Inspiring India's next chip designers.</p>
           </div>
 
-          <!-- Swiper -->
-          <div class="swiper" x-ref="swiperContainer" style="padding: 0 24px;">
-            <div class="swiper-wrapper">
+          <!-- Spacer: reserves height for the image rectangle -->
+          <div class="initiative__rect-area container" x-ref="rectArea"></div>
 
-              <!-- Card 1: Alpha Deal -->
-              <div class="swiper-slide">
-                <a href="https://www.alphadeal.ai/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #1b6b5a;" @mouseenter="$el.style.backgroundColor='#228570'" @mouseleave="$el.style.backgroundColor='#1b6b5a'">
-                  <div>
-                    <h3 class="h5 mb-4">Alpha Deal</h3>
-                  </div>
-                  <div class="portfolio-card__desc">
-                    <p class="p2">Private asset analysis, reimagined.</p>
-                  </div>
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </a>
+          <!-- Full-section image overlay (morphs to rectangle, then clips left on scroll) -->
+          <img
+            src="assets/images/young_Kids_tall.png"
+            alt="Young students getting hands-on experience with chip design and FPGA prototyping at Neuraware Systems"
+            class="initiative__img"
+            x-ref="img"
+            loading="eager"
+          >
+
+          <!-- Right panel: items shown one-by-one on scroll -->
+          <div class="initiative__right-panel" x-ref="rightPanel">
+            <div class="initiative__right-content" x-ref="rightContent">
+
+              <div class="initiative__item" x-ref="item1">
+                <h4 style="font-size: 48px; font-weight: 600; letter-spacing: .011em; margin-bottom: 16px;">Semiconductor Seminars</h4>
+                <p style="color: var(--color-pulse-ash); font-size: 32px; line-height: 1.4; font-weight: 600; letter-spacing: .011em;">Understand the chip industry before it defines the job market.</p>
               </div>
 
-              <!-- Card 2: Edda -->
-              <div class="swiper-slide">
-                <a href="https://joinedda.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #6b3fa0;" @mouseenter="$el.style.backgroundColor='#7d4fba'" @mouseleave="$el.style.backgroundColor='#6b3fa0'">
-                  <div>
-                    <h3 class="h5 mb-4">Edda</h3>
-                  </div>
-                  <div class="portfolio-card__desc">
-                    <p class="p2">A better, social-first, audio book streaming platform.</p>
-                  </div>
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </a>
+              <div class="initiative__item" x-ref="item2">
+                <h4 style="font-size: 48px; font-weight: 600; letter-spacing: .011em; margin-bottom: 16px;">Year-Long Foundation Course</h4>
+                <p style="color: var(--color-pulse-ash); font-size: 32px; line-height: 1.4; font-weight: 600; letter-spacing: .011em;">From logic gates to RTL coding. A structured path into hardware engineering.</p>
               </div>
 
-              <!-- Card 3: Novyra -->
-              <div class="swiper-slide">
-                <a href="https://novyra.ai/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #c75530;" @mouseenter="$el.style.backgroundColor='#d9663f'" @mouseleave="$el.style.backgroundColor='#c75530'">
-                  <div>
-                    <h3 class="h5 mb-4">Novyra</h3>
-                  </div>
-                  <div class="portfolio-card__desc">
-                    <p class="p2">Precision matching for clinical oncology trials.</p>
-                  </div>
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </a>
+              <div class="initiative__item" x-ref="item3">
+                <h4 style="font-size: 48px; font-weight: 600; letter-spacing: .011em; margin-bottom: 16px;">Hands-On Hardware Projects</h4>
+                <p style="color: var(--color-pulse-ash); font-size: 32px; line-height: 1.4; font-weight: 600; letter-spacing: .011em;">Build real circuits. Program real FPGAs. Ship real designs.</p>
               </div>
 
-              <!-- Card 4: Stratahub -->
-              <div class="swiper-slide">
-                <a href="https://stratahub.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #2563eb;" @mouseenter="$el.style.backgroundColor='#3b82f6'" @mouseleave="$el.style.backgroundColor='#2563eb'">
-                  <div>
-                    <h3 class="h5 mb-4">Stratahub</h3>
-                  </div>
-                  <div class="portfolio-card__desc">
-                    <p class="p2">AI-readiness hub that transforms fragmented, raw enterprise data into a structured, actionable form.</p>
-                  </div>
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </a>
-              </div>
-
-              <!-- Card 5: Remix Labs -->
-              <div class="swiper-slide">
-                <a href="https://remixlabs.ai/" target="_blank" rel="noopener noreferrer" class="portfolio-card corner-accent-parent block" style="background-color: #d4a017;" @mouseenter="$el.style.backgroundColor='#e0b42e'" @mouseleave="$el.style.backgroundColor='#d4a017'">
-                  <div>
-                    <h3 class="h5 mb-4">Remix Labs</h3>
-                  </div>
-                  <div class="portfolio-card__desc">
-                    <p class="p2">Advanced time series modeling for tomorrow's data flows.</p>
-                  </div>
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </a>
-              </div>
-
-              <!-- Card 6: US Autonomous Systems -->
-              <div class="swiper-slide">
-                <div class="portfolio-card corner-accent-parent" style="background-color: #0ea5a0;" @mouseenter="$el.style.backgroundColor='#14b8b3'" @mouseleave="$el.style.backgroundColor='#0ea5a0'">
-                  <div>
-                    <h3 class="h5 mb-4">US Autonomous Systems</h3>
-                  </div>
-                  <div class="portfolio-card__desc">
-                    <p class="p2">American-made drone accessories for frontline rescue and law enforcement.</p>
-                  </div>
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </div>
+              <div class="initiative__item" x-ref="item4">
+                <h4 style="font-size: 48px; font-weight: 600; letter-spacing: .011em; margin-bottom: 16px;">Engineer Mentorship</h4>
+                <p style="color: var(--color-pulse-ash); font-size: 32px; line-height: 1.4; font-weight: 600; letter-spacing: .011em;">Learn from engineers who design SoCs and AI accelerators &mdash; not from textbooks.</p>
               </div>
 
             </div>
           </div>
+        </section>
 
-          <!-- Navigation -->
-          <div class="container">
-            <div class="portfolio__nav">
-              <button class="portfolio__nav-btn" @click="prev()" :disabled="isBeginning" aria-label="Previous portfolio company">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M8.5 2.5L4 7L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <button class="portfolio__nav-btn" @click="next()" :disabled="isEnd" aria-label="Next portfolio company">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5.5 2.5L10 7L5.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
+
+        <!-- ==============================================================
+             INITIATIVE DESCRIPTION + WHY THIS MATTERS (pinned 100vh, two reveals)
+             ============================================================== -->
+        <section
+          id="why-it-matters"
+          x-data="initiativeReveal"
+          class="bg-rich-carbon text-neural-fog"
+          style="position: relative; z-index: 2; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;"
+        >
+          <!-- Dot matrix background canvas -->
+          <canvas x-ref="dotCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
+
+          <div class="container" style="max-width: 1100px; position: relative; z-index: 1;">
+
+            <!-- Slide 1: Description -->
+            <div x-ref="desc" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+              <p style="font-size: clamp(1.25rem, 2.5vw, 2rem); line-height: 1.5; font-weight: 500; max-width: 1000px;">The semiconductor wave is coming. We're making sure India's youth are ready to ride it. Our Industry Exposure Programme gives Class 9, 10, and 11 students hands-on experience with chip design, digital electronics, VLSI design flow, and FPGA prototyping &mdash; mentored by working engineers at a real deep-tech startup.</p>
             </div>
+
+            <!-- Slide 2: Why This Matters -->
+            <div x-ref="why" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <h3 x-ref="whyHeading" style="font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; color: var(--color-infrared); margin-bottom: var(--space-6);">Why This Matters</h3>
+              <p x-ref="whyBody" style="font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.4; font-weight: 500;">India's semiconductor ecosystem is accelerating. The students who start learning today will lead the industry tomorrow. We give them the foundation &mdash; and the inspiration &mdash; to get there.</p>
+              <a id="register-btn" x-ref="registerBtn" href="#contact" class="register-btn" style="margin-top: var(--space-8); font-size: 1.1rem; padding: 14px 40px; border-radius: 50px;">Register Now</a>
+            </div>
+
+            <!-- Spacer for height -->
+            <div style="min-height: 200px;"></div>
+
           </div>
         </section>
 
@@ -969,7 +844,7 @@
              13. TECHNOLOGY / INITIATIVE SECTION
              ============================================================== -->
         <section
-          id="portfolio"
+          id="technology"
           class="bg-rich-carbon text-neural-fog"
           style="position: relative; z-index: 2; padding: 120px 0;"
           aria-label="Our Technology"
@@ -1011,9 +886,9 @@
           class="footer"
           role="contentinfo"
         >
-          <!-- Left: Canvas Panel (hidden on mobile) -->
+          <!-- Left: Image Panel (hidden on mobile) -->
           <div class="footer__canvas-panel">
-            <canvas x-ref="footerCanvas" aria-hidden="true"></canvas>
+            <img src="assets/images/Neuraware microchip close-up shot.png" alt="Neuraware microchip close-up" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
 
           <!-- Right: Infrared Panel -->
@@ -1023,49 +898,30 @@
             <div class="footer__cta">
               <h2 class="footer__cta-title h6 uppercase">Let's talk.</h2>
               <p class="p2 mb-8">Whether you're a healthcare partner, a student curious about semiconductors, or someone who believes heart disease detection should be better&mdash;we'd love to hear from you.</p>
-              <button
-                class="button-component"
-                data-theme="dark"
-                @click="$dispatch('contact-modal:open', { type: 'general' })"
-              >
-                <div class="button-component__dot"></div>
-                <div class="button-component__text-wrapper p2-mono">
-                  <span class="button-component__text">Contact Us</span>
-                  <span class="button-component__text" aria-hidden="true">Contact Us</span>
-                </div>
-                <svg class="corner-accent corner-accent--top-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                <svg class="corner-accent corner-accent--top-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                <svg class="corner-accent corner-accent--bottom-left" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-                <svg class="corner-accent corner-accent--bottom-right" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg>
-              </button>
             </div>
 
-            <!-- WQF Emblem -->
-            <div class="footer-emblem mb-12">
-              <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Neuraware Systems Pvt. Ltd. emblem">
-                <path d="M8 55L22 10L32.5 38L43 10L57 55" stroke="#090909" stroke-width="2" fill="none"/>
-                <path d="M2 55L32.5 2L63 55" stroke="#090909" stroke-width="1.5" fill="none" opacity="0.5"/>
-                <path d="M18 55L32.5 18L47 55" stroke="#090909" stroke-width="1" fill="none" opacity="0.4"/>
-              </svg>
+            <!-- Footer Logo -->
+            <div class="footer-emblem mb-12" style="margin-top: -180px; text-align: left; margin-left: -110px;">
+              <img src="assets/icons/NEURAWARE_banner_blackbg_w0BG.png" alt="Neuraware Systems" style="height: 500px; width: auto; filter: invert(1);">
             </div>
 
             <!-- Footer Links -->
-            <div class="footer__links">
+            <div class="footer__links" style="margin-top: -180px;">
 
               <!-- Nav Links (with dot animation) -->
               <nav class="footer__nav" aria-label="Footer navigation">
-                <a href="#ethos" class="footer__nav-link h5 uppercase">
+                <a href="#technology" class="footer__nav-link h5 uppercase">
                   <div class="nav-dot"></div>
                   <div class="nav-text">
-                    <span>ABOUT</span>
-                    <span aria-hidden="true">ABOUT</span>
+                    <span>TECHNOLOGY</span>
+                    <span aria-hidden="true">TECHNOLOGY</span>
                   </div>
                 </a>
-                <a href="#portfolio" class="footer__nav-link h5 uppercase">
+                <a href="#focus" class="footer__nav-link h5 uppercase">
                   <div class="nav-dot"></div>
                   <div class="nav-text">
-                    <span>INITIATIVE</span>
-                    <span aria-hidden="true">INITIATIVE</span>
+                    <span>YOUNG INNOVATORS</span>
+                    <span aria-hidden="true">YOUNG INNOVATORS</span>
                   </div>
                 </a>
                 <a href="#team" class="footer__nav-link h5 uppercase">
@@ -1073,13 +929,6 @@
                   <div class="nav-text">
                     <span>TEAM</span>
                     <span aria-hidden="true">TEAM</span>
-                  </div>
-                </a>
-                <a href="#contact" class="footer__nav-link h5 uppercase">
-                  <div class="nav-dot"></div>
-                  <div class="nav-text">
-                    <span>CONTACT</span>
-                    <span aria-hidden="true">CONTACT</span>
                   </div>
                 </a>
               </nav>

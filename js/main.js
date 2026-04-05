@@ -380,6 +380,100 @@ function createDotMatrix(canvas) {
 }
 
 // ---------------------------------------------------------------------------
+// 1d. Reveal Dot Matrix – 2D canvas dot grid driven by scroll progress
+// ---------------------------------------------------------------------------
+
+function createRevealDotMatrix(canvas, triggerEl) {
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return () => {};
+
+  const spacing = 28;
+  let w, h, cols, rows, dpr;
+  let scrollProgress = 0;
+  let destroyed = false;
+  let animId;
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio, 2);
+    w = canvas.clientWidth;
+    h = canvas.clientHeight;
+    canvas.width  = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cols = Math.ceil(w / spacing) + 2;
+    rows = Math.ceil(h / spacing) + 2;
+  }
+
+  resize();
+
+  // Track scroll progress via GSAP ScrollTrigger
+  ScrollTrigger.create({
+    trigger: triggerEl,
+    start: 'top top',
+    end: '+=200%',
+    scrub: true,
+    onUpdate: (self) => { scrollProgress = self.progress; },
+  });
+
+  function draw() {
+    if (destroyed) return;
+    animId = requestAnimationFrame(draw);
+
+    ctx.clearRect(0, 0, w, h);
+
+    const centerX = w / 2;
+    const centerY = h / 2;
+    const maxDist = Math.sqrt(centerX * centerX + centerY * centerY);
+    const wave = scrollProgress * Math.PI * 4;
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = (c - (cols - 1) / 2) * spacing + centerX;
+        const y = (r - (rows - 1) / 2) * spacing + centerY;
+
+        const dx = x - centerX;
+        const dy = y - centerY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const normDist = dist / maxDist;
+
+        // Ripple emanates from center, driven by scroll
+        const ripple = Math.sin(wave - normDist * 6);
+        const scale = 0.5 + ripple * 0.5;
+
+        // Opacity: subtle base, brighter at edges, dimmer near center so text is readable
+        const centerFade = Math.min(1, normDist * 1.8);
+        const baseOpacity = 0.1 * centerFade;
+        const scrollOpacity = scrollProgress * 0.4 * centerFade;
+        const opacity = Math.min(0.5, baseOpacity + scrollOpacity * Math.max(0, scale));
+
+        // Size pulses with ripple
+        const radius = 1.5 + Math.max(0, ripple) * scrollProgress * 2.5;
+
+        // Positional offset driven by scroll — more movement
+        const offsetX = Math.sin(wave * 0.5 + r * 0.15) * scrollProgress * 6;
+        const offsetY = Math.cos(wave * 0.5 + c * 0.12) * scrollProgress * 6;
+
+        ctx.beginPath();
+        ctx.arc(x + offsetX, y + offsetY, radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.fill();
+      }
+    }
+  }
+
+  draw();
+
+  const onResize = debounce(() => { if (!destroyed) resize(); }, 300);
+  window.addEventListener('resize', onResize);
+
+  return () => {
+    destroyed = true;
+    if (animId) cancelAnimationFrame(animId);
+    window.removeEventListener('resize', onResize);
+  };
+}
+
+// ---------------------------------------------------------------------------
 // 2. Alpine Components
 // ---------------------------------------------------------------------------
 
@@ -433,7 +527,7 @@ document.addEventListener('alpine:init', () => {
       };
 
       // Track which section is in view
-      const sectionIds = ['ethos', 'portfolio', 'team', 'contact'];
+      const sectionIds = ['ethos', 'focus', 'initiative', 'team', 'contact'];
       const observerCallback = (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -449,6 +543,26 @@ document.addEventListener('alpine:init', () => {
         const el = document.getElementById(id);
         if (el) observer.observe(el);
       });
+
+      // Also track pinned sections via ScrollTrigger
+      if (typeof ScrollTrigger !== 'undefined') {
+        const pinnedIds = ['initiative'];
+        pinnedIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          ScrollTrigger.create({
+            trigger: el,
+            start: 'top top',
+            end: 'bottom top',
+            onToggle: (self) => {
+              if (self.isActive) {
+                this.activeSection = id;
+                this.$nextTick(() => this.positionPill());
+              }
+            },
+          });
+        });
+      }
 
       // Reposition pill on resize
       window.addEventListener('resize', debounce(() => this.positionPill(), 150));
@@ -514,7 +628,21 @@ document.addEventListener('alpine:init', () => {
       this.mobileMenuOpen = false;
       document.body.style.overflow = '';
       const el = document.querySelector(target);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (!el) return;
+
+      // For pinned sections, use ScrollTrigger to find the correct scroll position
+      if (typeof ScrollTrigger !== 'undefined') {
+        const triggers = ScrollTrigger.getAll();
+        const st = triggers.find(t => t.trigger === el || t.vars.trigger === el);
+        if (st) {
+          // For initiative, scroll to where title is revealed (~60%)
+          const progress = (el.id === 'initiative') ? 0.75 : 0;
+          window.scrollTo({ top: st.start + (st.end - st.start) * progress, behavior: 'smooth' });
+          return;
+        }
+      }
+
+      el.scrollIntoView({ behavior: 'smooth' });
     },
 
     scrollToTop() {
@@ -558,11 +686,13 @@ document.addEventListener('alpine:init', () => {
       }
 
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      tl.from('.hero-title-left',
-        { x: -40, opacity: 0, duration: 0.9, stagger: 0.08 }
+      tl.fromTo('.hero-title-left',
+        { x: -40, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.9, stagger: 0.08 }
       )
-      .from('.hero-title-right',
-        { x: 40, opacity: 0, duration: 0.9, stagger: 0.08 },
+      .fromTo('.hero-title-right',
+        { x: 40, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.9, stagger: 0.08 },
         '<0.1'
       )
       .from('.hero-bottom',
@@ -851,6 +981,160 @@ document.addEventListener('alpine:init', () => {
   }));
 
   // ---- Footer ----
+  // ---- Initiative Section ----
+  Alpine.data('initiative', () => ({
+    init() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      if (prefersReducedMotion) return;
+
+      const img        = this.$refs.img;
+      const label      = this.$refs.label;
+      const tagline    = this.$refs.tagline;
+      const rectArea   = this.$refs.rectArea;
+      const rightPanel = this.$refs.rightPanel;
+      const items      = [this.$refs.item1, this.$refs.item2, this.$refs.item3, this.$refs.item4];
+      const section    = this.$el;
+
+      // Hide text initially
+      gsap.set([label, tagline], { opacity: 0, y: 40 });
+      gsap.set(rightPanel, { opacity: 0 });
+      gsap.set(items, { opacity: 0, y: 30 });
+
+      // Read the spacer's layout position relative to the section
+      const sectionRect = section.getBoundingClientRect();
+      const areaRect    = rectArea.getBoundingClientRect();
+
+      const rectTop  = areaRect.top  - sectionRect.top;
+      const rectLeft = areaRect.left - sectionRect.left;
+      const rectW    = areaRect.width;
+      const rectH    = areaRect.height;
+
+      // Set initial full-section image state
+      gsap.set(img, {
+        top: 0, left: 0,
+        width: '100%', height: '100%',
+        borderRadius: 0,
+      });
+
+      const vh = window.innerHeight;
+
+      // Pinned timeline: morph → text → split → items one-by-one
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: '+=400%',
+          pin: true,
+          scrub: 1,
+        }
+      });
+
+      // Phase 1: Image morphs from full-section to rectangle
+      tl.to(img, {
+        top: rectTop,
+        left: rectLeft,
+        width: rectW,
+        height: rectH,
+        borderRadius: '24px',
+        duration: 0.5,
+        ease: 'none',
+      }, 0);
+
+      // Phase 2: Title + tagline appear
+      tl.to(label,   { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.55);
+      tl.to(tagline, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.7);
+
+      // Phase 3: Image clips to left half of viewport, right panel reveals
+      tl.to(img, {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '50vw',
+        height: vh,
+        borderRadius: 0,
+        duration: 0.5,
+        ease: 'none',
+      }, 1.1);
+
+      tl.to([label, tagline], {
+        opacity: 0, duration: 0.2,
+      }, 1.1);
+
+      tl.to(rightPanel, {
+        opacity: 1, duration: 0.3,
+      }, 1.2);
+
+      // Phase 4: Items appear one-by-one, each replacing the previous
+      const itemStart = 1.5;
+      const itemDur   = 0.3;
+      const itemGap   = 0.5;
+
+      items.forEach((item, i) => {
+        const t = itemStart + i * itemGap;
+
+        // Fade in
+        tl.to(item, { opacity: 1, y: 0, duration: itemDur, ease: 'power2.out' }, t);
+
+        // Fade out (except last item)
+        if (i < items.length - 1) {
+          tl.to(item, { opacity: 0, y: -20, duration: itemDur, ease: 'power2.in' }, t + itemGap - itemDur);
+        }
+      });
+    },
+  }));
+
+  // ---- Initiative Reveal (description → why this matters) ----
+  Alpine.data('initiativeReveal', () => ({
+    _dotCleanup: null,
+    init() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      if (prefersReducedMotion) return;
+
+      const desc        = this.$refs.desc;
+      const why         = this.$refs.why;
+      const whyHeading  = this.$refs.whyHeading;
+      const whyBody     = this.$refs.whyBody;
+      const registerBtn = this.$refs.registerBtn;
+
+      gsap.set(desc, { opacity: 0, y: 30 });
+      gsap.set(why,  { opacity: 0 });
+      gsap.set(whyHeading, { y: 30 });
+      gsap.set(whyBody,    { y: 30 });
+      gsap.set(registerBtn, { opacity: 0, y: 20 });
+
+      // ---- Dot matrix canvas ----
+      const canvas = this.$refs.dotCanvas;
+      if (canvas) {
+        this._dotCleanup = createRevealDotMatrix(canvas, this.$el);
+      }
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: this.$el,
+          start: 'top top',
+          end: '+=200%',
+          pin: true,
+          scrub: 1,
+        }
+      });
+
+      // Description pops in immediately
+      tl.to(desc, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0);
+
+      // Description fades out
+      tl.to(desc, { opacity: 0, y: -20, duration: 0.3 }, 0.45);
+
+      // Why This Matters reveals
+      tl.to(why,        { opacity: 1, duration: 0.3 }, 0.55);
+      tl.to(whyHeading, { y: 0, duration: 0.4, ease: 'power2.out' }, 0.55);
+      tl.to(whyBody,    { y: 0, duration: 0.4, ease: 'power2.out' }, 0.65);
+      tl.to(registerBtn, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 0.75);
+    },
+    destroy() {
+      if (this._dotCleanup) this._dotCleanup();
+    },
+  }));
+
   Alpine.data('footer', () => ({
     _cleanup: null,
     init() {
