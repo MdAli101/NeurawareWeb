@@ -513,166 +513,23 @@
           <div class="focus-industries-list container" style="padding-top: var(--space-16); padding-bottom: var(--space-24);">
             <div x-data="industriesList" class="industries-list" role="list" aria-label="Our technology focus areas">
 
-              <!-- Focus Area 1 -->
+              <!-- Young Innovators Initiative -->
               <div
                 class="industries-list__item industry-item"
                 :class="{ '-expanded': isExpanded(0) }"
                 @mouseenter="onHover(0)"
-                @click="setActive(0)"
-                role="listitem"
-              >
-                <div class="flex items-center justify-between w-full">
-                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(0)">NeuraCardio SoC</h3>
-                  <p class="industries-list__item-desc p3 hidden lg:block"></p>
-                  <div class="industries-list__item-arrow">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <div class="industries-list__item-accordion" :style="getDescriptionStyle(0)">
-                  <div style="overflow: hidden;">
-                    <p class="p3" style="padding-top: var(--space-4);"></p>
-                  </div>
-                </div>
-                <!-- Highlight box with corner accents -->
-                <div class="industries-list__item-highlight">
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </div>
-              </div>
-
-              <!-- Focus Area 2 -->
-              <div
-                class="industries-list__item industry-item"
-                :class="{ '-expanded': isExpanded(1) }"
-                @mouseenter="onHover(1)"
-                @click="setActive(1)"
-                role="listitem"
-              >
-                <div class="flex items-center justify-between w-full">
-                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(1)">Edge AI Engine</h3>
-                  <p class="industries-list__item-desc p3 hidden lg:block">A proprietary inference engine optimized for low-power, high-accuracy neural network execution on hardware.</p>
-                  <div class="industries-list__item-arrow">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
-                  </div>
-                </div>
-                <div class="industries-list__item-accordion" :style="getDescriptionStyle(1)">
-                  <div style="overflow: hidden;">
-                    <p class="p3" style="padding-top: var(--space-4);">A proprietary inference engine optimized for low-power, high-accuracy neural network execution on hardware.</p>
-                  </div>
-                </div>
-                <div class="industries-list__item-highlight">
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </div>
-              </div>
-
-              <!-- Focus Area 3 -->
-              <div
-                class="industries-list__item industry-item"
-                :class="{ '-expanded': isExpanded(2) }"
-                @mouseenter="onHover(2)"
-                @click="setActive(2)"
-                role="listitem"
-              >
-                <div class="flex items-center justify-between w-full">
-                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(2)">ECG Signal Pipeline</h3>
-                  <p class="industries-list__item-desc p3 hidden lg:block">End-to-end signal acquisition, preprocessing, and feature extraction — designed for noisy, real-world cardiac data.</p>
-                  <div class="industries-list__item-arrow">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
-                  </div>
-                </div>
-                <div class="industries-list__item-accordion" :style="getDescriptionStyle(2)">
-                  <div style="overflow: hidden;">
-                    <p class="p3" style="padding-top: var(--space-4);">End-to-end signal acquisition, preprocessing, and feature extraction — designed for noisy, real-world cardiac data.</p>
-                  </div>
-                </div>
-                <div class="industries-list__item-highlight">
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </div>
-              </div>
-
-              <!-- Focus Area 4 -->
-              <div
-                class="industries-list__item industry-item"
-                :class="{ '-expanded': isExpanded(3) }"
-                @mouseenter="onHover(3)"
-                @click="setActive(3)"
-                role="listitem"
-              >
-                <div class="flex items-center justify-between w-full">
-                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(3)">Cardiac AI Models</h3>
-                  <p class="industries-list__item-desc p3 hidden lg:block">Deep learning architectures trained on clinical ECG datasets to classify heart conditions with diagnostic confidence.</p>
-                  <div class="industries-list__item-arrow">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
-                  </div>
-                </div>
-                <div class="industries-list__item-accordion" :style="getDescriptionStyle(3)">
-                  <div style="overflow: hidden;">
-                    <p class="p3" style="padding-top: var(--space-4);">Deep learning architectures trained on clinical ECG datasets to classify heart conditions with diagnostic confidence.</p>
-                  </div>
-                </div>
-                <div class="industries-list__item-highlight">
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </div>
-              </div>
-
-              <!-- Focus Area 5 -->
-              <div
-                class="industries-list__item industry-item"
-                :class="{ '-expanded': isExpanded(4) }"
-                @mouseenter="onHover(4)"
-                @click="setActive(4)"
-                role="listitem"
-              >
-                <div class="flex items-center justify-between w-full">
-                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(4)">Hardware IP Library</h3>
-                  <p class="industries-list__item-desc p3 hidden lg:block">Reusable, verified RTL blocks and accelerator IPs for deploying AI workloads on FPGA and ASIC targets.</p>
-                  <div class="industries-list__item-arrow">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
-                  </div>
-                </div>
-                <div class="industries-list__item-accordion" :style="getDescriptionStyle(4)">
-                  <div style="overflow: hidden;">
-                    <p class="p3" style="padding-top: var(--space-4);">Reusable, verified RTL blocks and accelerator IPs for deploying AI workloads on FPGA and ASIC targets.</p>
-                  </div>
-                </div>
-                <div class="industries-list__item-highlight">
-                  <span class="corner-accent corner-accent--top-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--top-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-left"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                  <span class="corner-accent corner-accent--bottom-right"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M0.5 0.2L0.5 9.2M0.2 0.5L9.2 0.5" stroke="currentColor"/></svg></span>
-                </div>
-              </div>
-
-              <!-- Focus Area 6 -->
-              <div
-                class="industries-list__item industry-item"
-                :class="{ '-expanded': isExpanded(5) }"
-                @mouseenter="onHover(5)"
                 @click="(() => { const triggers = ScrollTrigger.getAll(); const t = triggers.find(st => st.vars.trigger && st.vars.trigger.id === 'why-it-matters'); if (t) { window.scrollTo({ top: t.start + (t.end - t.start) * 0.85, behavior: 'smooth' }); } })()"
                 role="listitem"
                 style="cursor: pointer;"
               >
                 <div class="flex items-center justify-between w-full">
-                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(5)">Young Innovators Initiative</h3>
+                  <h3 class="industries-list__item-name h-vw" :style="getHeadingStyle(0)">Young Innovators Initiative</h3>
                   <p class="industries-list__item-desc p3 hidden lg:block">Our programme inspiring India's next generation of chip designers through hands-on semiconductor education for school students.</p>
                   <div class="industries-list__item-arrow">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.92 13H9.98L14 9.02L9.98 5H7.92L11.07 8.28H4V9.77H11.07L7.92 13Z" fill="currentColor"/></svg>
                   </div>
                 </div>
-                <div class="industries-list__item-accordion" :style="getDescriptionStyle(5)">
+                <div class="industries-list__item-accordion" :style="getDescriptionStyle(0)">
                   <div style="overflow: hidden;">
                     <p class="p3" style="padding-top: var(--space-4);">Our programme inspiring India's next generation of chip designers through hands-on semiconductor education for school students.</p>
                   </div>
